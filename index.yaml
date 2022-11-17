@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  lwd-worker:
+  - apiVersion: v2
+    appVersion: 1.773.0
+    created: "2022-11-17T09:16:54.770511301Z"
+    dependencies:
+    - name: harness-common
+      repository: https://harness.github.io/helm-common
+      version: 1.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    description: A Helm chart for Kubernetes
+    digest: 6bed7aea38973f40fc179c72a61c343917e32e4bd4923161ceeb1539843eb7c1
+    name: lwd-worker
+    type: application
+    urls:
+    - https://github.com/harness/helm-lightwingFaktoryWorker/releases/download/lwd-worker-0.1.2/lwd-worker-0.1.2.tgz
+    version: 0.1.2
+generated: "2022-11-17T09:16:54.770522701Z"

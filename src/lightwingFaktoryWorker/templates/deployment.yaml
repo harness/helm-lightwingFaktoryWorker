@@ -87,35 +87,35 @@ spec:
             - name: LIGHTWING_AWSMASTER_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.lwdSecrets.secretName }}
-                  key: {{ .Values.lwdSecrets.lightwingAwsmasterSecretKey }}
+                  name: {{ .Values.lwdWorkerSecrets.secretName }}
+                  key: {{ .Values.lwdWorkerSecrets.lightwingAwsmasterSecretKey }}
             - name: LIGHTWING_AWSMASTER_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.lwdSecrets.secretName }}
-                  key: {{ .Values.lwdSecrets.lightwingAwsmasterAccessKey }}
+                  name: {{ .Values.lwdWorkerSecrets.secretName }}
+                  key: {{ .Values.lwdWorkerSecrets.lightwingAwsmasterAccessKey }}
             - name: LIGHTWING_CLOUD-CONNECTOR_IDENTITY_SERVICE_SECRET
               value: HVSKUYqD4e5Rxu12hFDdCJKGM64sxgEynvdDhaOHaTHhwwn0K4Ttr0uoOxSsEVYNrUU=
             - name: LIGHTWING_CLOUD-CONNECTOR_AZURE_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.lwdSecrets.secretName }}
-                  key: {{ .Values.lwdSecrets.lightwingCloudConnectorAzureClientSecret }}
+                  name: {{ .Values.lwdWorkerSecrets.secretName }}
+                  key: {{ .Values.lwdWorkerSecrets.lightwingCloudConnectorAzureClientSecret }}
             - name: LIGHTWING_AWS-GOV-MASTER_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.lwdSecrets.secretName }}
-                  key: {{ .Values.lwdSecrets.lightwingAwsGovmasterSecretKey }}
+                  name: {{ .Values.lwdWorkerSecrets.secretName }}
+                  key: {{ .Values.lwdWorkerSecrets.lightwingAwsGovmasterSecretKey }}
             - name: LIGHTWING_AWS-GOV-MASTER_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.lwdSecrets.secretName }}
-                  key: {{ .Values.lwdSecrets.lightwingAwsGovmasterAccessKey }}
+                  name: {{ .Values.lwdWorkerSecrets.secretName }}
+                  key: {{ .Values.lwdWorkerSecrets.lightwingAwsGovmasterAccessKey }}
             - name: LIGHTWING_METRICS_SEGMENT
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.lwdSecrets.secretName }}
-                  key: {{ .Values.lwdSecrets.lightwingMetricsSegment }}
+                  name: {{ .Values.lwdWorkerSecrets.secretName }}
+                  key: {{ .Values.lwdWorkerSecrets.lightwingMetricsSegment }}
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -123,8 +123,13 @@ spec:
                   key: {{ .Values.postgresPassword.key }}
             - name: LIGHTWING_DB_CONNECTION
               value: "host=postgres.{{ .Release.Namespace }}.svc.cluster.local user=postgres password=$(DB_PASSWORD) dbname=postgres sslmode=disable"
+            - name: FAKTORY_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.lwdWorkerSecrets.secretName }}
+                  key: {{ .Values.lwdWorkerSecrets.faktoryPassword }}
             - name: FAKTORY_URL
-              value: tcp://:{{ .Values.lwdSecrets.faktoryPassword }}@lwd-faktory.{{ .Release.Namespace }}.svc.cluster.local:7419
+              value: tcp://$(FAKTORY_PASSWORD):@lwd-faktory.{{ .Release.Namespace }}.svc.cluster.local:7419
           volumeMounts:
           - name: secret-mount
             mountPath: /opt/harness/svc

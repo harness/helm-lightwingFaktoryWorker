@@ -41,8 +41,8 @@ postgresPassword:
   name: postgres
   key: postgres-password
 
-lwd-workerSecrets:
-  secretName: lwd-worker-secrets
+lwdWorkerSecrets:
+  secretName: lwd-secrets
   faktoryPassword: FAKTORY_PASSWORD
   lightwingAwsmasterAccessKey: LIGHTWING_AWSMASTER_ACCESS_KEY
   lightwingAwsmasterSecretKey: LIGHTWING_AWSMASTER_SECRET_KEY

@@ -1,6 +1,6 @@
 # lwd-worker
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.773.0](https://img.shields.io/badge/AppVersion-1.773.0-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.773.0](https://img.shields.io/badge/AppVersion-1.773.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -40,14 +40,14 @@ A Helm chart for Kubernetes
 | ingress.className | string | `"nginx"` |  |
 | java.memory | string | `"4096m"` |  |
 | java.memoryLimit | string | `"4096m"` |  |
-| lwd-workerSecrets.faktoryPassword | string | `"FAKTORY_PASSWORD"` |  |
-| lwd-workerSecrets.lightwingAwsGovmasterAccessKey | string | `"LIGHTWING_AWS-GOV-MASTER_ACCESS_KEY"` |  |
-| lwd-workerSecrets.lightwingAwsGovmasterSecretKey | string | `"LIGHTWING_AWS-GOV-MASTER_SECRET_KEY"` |  |
-| lwd-workerSecrets.lightwingAwsmasterAccessKey | string | `"LIGHTWING_AWSMASTER_ACCESS_KEY"` |  |
-| lwd-workerSecrets.lightwingAwsmasterSecretKey | string | `"LIGHTWING_AWSMASTER_SECRET_KEY"` |  |
-| lwd-workerSecrets.lightwingCloudConnectorAzureClientSecret | string | `"LIGHTWING_CLOUD-CONNECTOR_AZURE_CLIENT_SECRET"` |  |
-| lwd-workerSecrets.lightwingMetricsSegment | string | `"LIGHTWING_METRICS_SEGMENT"` |  |
-| lwd-workerSecrets.secretName | string | `"lwd-worker-secrets"` |  |
+| lwdWorkerSecrets.faktoryPassword | string | `"FAKTORY_PASSWORD"` |  |
+| lwdWorkerSecrets.lightwingAwsGovmasterAccessKey | string | `"LIGHTWING_AWS-GOV-MASTER_ACCESS_KEY"` |  |
+| lwdWorkerSecrets.lightwingAwsGovmasterSecretKey | string | `"LIGHTWING_AWS-GOV-MASTER_SECRET_KEY"` |  |
+| lwdWorkerSecrets.lightwingAwsmasterAccessKey | string | `"LIGHTWING_AWSMASTER_ACCESS_KEY"` |  |
+| lwdWorkerSecrets.lightwingAwsmasterSecretKey | string | `"LIGHTWING_AWSMASTER_SECRET_KEY"` |  |
+| lwdWorkerSecrets.lightwingCloudConnectorAzureClientSecret | string | `"LIGHTWING_CLOUD-CONNECTOR_AZURE_CLIENT_SECRET"` |  |
+| lwdWorkerSecrets.lightwingMetricsSegment | string | `"LIGHTWING_METRICS_SEGMENT"` |  |
+| lwdWorkerSecrets.secretName | string | `"lwd-secrets"` |  |
 | maxSurge | string | `"100%"` |  |
 | maxUnavailable | int | `0` |  |
 | nameOverride | string | `""` |  |

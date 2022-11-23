@@ -42,7 +42,7 @@ spec:
           - "pod"
           - "-lapp=lwd"
       containers:
-        - name: lwd
+        - name: lwd-worker
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
